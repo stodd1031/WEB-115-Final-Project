@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WEB-115 Final Project</title>
+    <style>
+        .crop-container {
+            width: "100%";
+            height: 18vh;
+            overflow: hidden;
+            position: relative; 
+            /* position has to be sticky or relative??? 
+            CSS IS SO CONFUSING
+            https://www.w3schools.com/css/css_positioning.asp */
+        }
+
+        .crop-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-overlay-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text-overlay {
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="crop-container">
+            <img
+                src="https://d3k81ch9hvuctc.cloudfront.net/company/JJh7c2/images/cc161256-e24a-46c7-bad1-19bd4c002048.jpeg">
+            <div class="text-overlay-container">
+                <h1 class="text-overlay">Build Your Meal Plan</h1>
+                <h2 class="text-overlay">Steven McKitrick | WEB-115 | Section 0002</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <form id="mealPlanForm">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name"><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email"><br>
+
+                <label for="goal">Goal for the Week:</label>
+                <input type="text" id="goal"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Weekly Meal Plan</legend>
+                <table id="calendarTable">
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Snack</th>
+                        <th>Lunch</th>
+                        <th>Snack</th>
+                        <th>Dinner</th>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <button type="button" id="generatePlanBtn">Generate Meal Plan</button>
+            <button type="reset">Clear Planner</button>
+            <button type="button" id="printPlanBtn">Print/Download Planner</button>
+        </form>
+    </main>
+
+    <script src="projectJS.js"></script>
+</body>
+
+</html>
